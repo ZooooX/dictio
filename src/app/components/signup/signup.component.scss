@@ -1,0 +1,46 @@
+:host{
+    display: block;
+    height:calc(100% - 64px);
+}
+
+.signup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    
+    #card{
+        max-width: 450px;
+        width: 80%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+
+        h2{
+            font-weight: bold;
+        }
+
+        form{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 80%;
+            width : 80%;
+
+            .fields{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+
+                mat-form-field{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<div class="signup-container">
+    <mat-card id="card"> 
+        <h2>Sign Up</h2>
+        <form [formGroup] = "signUpForm" (ngSubmit) = "submitSignUp()">
+            <div class="fields">
+                <mat-form-field appearance="fill">
+                    <mat-label for="emailInput">Email</mat-label>
+                    <input matInput type="email" id='emailInput' formControlName = 'email' required autocomplete="off">
+                    <mat-error *ngIf="signUpForm.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label for="usernameInput">Username</mat-label>
+                    <input matInput id='usernameInput' formControlName = 'username' required autocomplete="off">
+                    <mat-error *ngIf="signUpForm.controls['username'].invalid">{{getErrorMessage('username')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label for="passwordInput">Password</mat-label>
+                    <input matInput type="password" id='passwordInput' formControlName = 'password' required autocomplete="off">
+                    <mat-error *ngIf="signUpForm.controls['password'].invalid">{{getErrorMessage('password')}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label for="role">Role</mat-label>
+                    <mat-select formControlName='roles' id='roles' required>
+                        <mat-option *ngFor="let role of rolesList" [value]='role'>{{role.name}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="signUpForm.controls['roles'].invalid">{{getErrorMessage('roles')}}</mat-error>
+                    <mat-hint>{{signUpForm.controls['roles'].value?.explanation}}</mat-hint>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color='primary' type="submit">Sign Up</button>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,7 @@
+<div class="header-container" >
+    <mat-toolbar color='primary'>
+        <h1 routerLink="/home" id="title">Dictio</h1>
+        <div  *ngIf="!isLoggedIn" id="signin-btn" routerLink = "/signin">SIGN IN</div>
+        <div  *ngIf="isLoggedIn" id="signout-btn" (click)="logout()">SIGN OUT</div>
+    </mat-toolbar>
+</div>

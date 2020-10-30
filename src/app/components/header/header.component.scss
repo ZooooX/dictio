@@ -1,0 +1,18 @@
+.header-container mat-toolbar{
+    display:flex;
+    justify-content: space-between;
+
+    #title{
+        margin-left: 2%;
+    }
+
+    #signin-btn, #signout-btn{
+        margin-right: 2%;
+        cursor: pointer;
+        transition: 0.6s;
+
+        &:hover{
+            color: #000;
+        }
+    }
+}
